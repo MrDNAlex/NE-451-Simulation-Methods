@@ -1,0 +1,59 @@
+# ------------------------ INITIALIZATION ----------------------
+units           metal
+boundary        p p p
+atom_style	atomic
+
+
+# ---------- Read_data     ---------------------
+read_data 	structure.lmp
+
+
+# ----------------------- VARIABLES ---------------------
+variable        dt equal 0.001
+
+
+# --------- Group Atoms -----------
+group 		Li type 1
+group 		Mn type 2
+group 		O  type 3
+
+
+# ------------------------ FORCE FIELDS -----------------------
+pair_style	meam
+pair_coeff * * library.meam Li Mn O LiMnO.meam Li Mn O
+
+
+# ---------- Define MSD -------------
+compute         MSDLi Li msd
+compute         MSDMn Mn msd
+compute         MSDO  O  msd
+
+
+# -------- Customize Output  ---------
+thermo          100
+dump            myDump1 all custom 100 Dumpfiles/_*.dump id type element x y z vx vy vz fx fy fz
+dump_modify 	myDump1 element Li Mn O
+
+
+# ---------- Relax ------------
+timestep        ${dt}
+velocity        all create 670.0 123
+
+fix             integrate1 all npt temp 670.0 670.0 10.0 aniso 0.0 0.0 10.0
+fix             v_Li Li vector 1 c_MSDLi[4]
+fix		v_Mn Mn vector 1 c_MSDMn[4]
+fix		v_O O vector 1 c_MSDO[4]  
+
+variable        Li_slope equal slope(f_v_Li)/6/(1*${dt})
+variable        Mn_slope equal slope(f_v_Mn)/6/(1*${dt})
+variable        O_slope equal slope(f_v_O)/6/(1*${dt})
+
+thermo_style    custom step temp pe ke etotal  c_MSDLi[4] c_MSDMn[4] c_MSDO[4] v_Li_slope v_Mn_slope v_O_slope
+run             50000
+unfix           integrate1
+
+print "Diffusion Coefficient for Li (A^2/ps) = ${Li_slope};"
+print "Diffusion Coefficient for Mn (A^2/ps) = ${Mn_slope};"
+print "Diffusion Coefficient for O (A^2/ps) = ${O_slope};"
+
+print "All done!"
