@@ -14,7 +14,7 @@ read_data Fe.data
 mass 1 55.845
 
 # Define Interatomic Potential
-pair_style eam              # Embedded Atom Method
+pair_style eam/fs              # Embedded Atom Method
 pair_coeff * * Fe.eam Fe    # EAm Potential File
 neighbor 2.0 bin            # Neighbor List Cutoff
 neigh_modify delay 0 every 1 check yes # Update the Neighbor list ever step
@@ -41,7 +41,7 @@ reset_timestep 0
 fix 1 all box/relax iso 0.0 vmax 0.001              # let Box relax under 0 pressure
 thermo 10                                           # Print Thermodynamic Info every 10 steps
 thermo_style custom step pe lx ly lz press c_eatoms 
-min_style cg                                        # Conjugate gradient minimization
+min_style cg                                     # Conjugate gradient minimization
 minimize 1e-25 1e-25 5000 10000                     # Energy/force convergence
 
 # Define Global Variables

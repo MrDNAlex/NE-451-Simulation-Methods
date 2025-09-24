@@ -1,0 +1,54 @@
+# ------------------------ INITIALIZATION ----------------------
+units           metal
+boundary        p p p
+atom_style	atomic
+
+
+# ---------- Read_data     ---------------------
+read_data 	structure.lmp
+
+
+# ----------------------- VARIABLES ---------------------
+variable        dt equal 0.001
+
+
+# --------- Group Atoms -----------
+group 		Li type 1
+group 		Mn type 2
+group 		O  type 3
+
+
+# ------------------------ FORCE FIELDS -----------------------
+pair_style	meam
+pair_coeff * * library.meam Li Mn O LiMnO.meam Li Mn O
+
+
+# ---------- EQUILIBRATION ------------
+# --------- Customize Output ----------
+thermo 		100
+thermo_style    custom step temp pe ke etotal press lx ly lz
+# ---------- Equilibration step  ------------
+timestep        ${dt}
+velocity        all create 670.0 123
+
+fix             integrate1 all npt temp 670.0 670.0 10.0 aniso 0.0 0.0 10.0
+
+run             50000
+unfix           integrate1
+
+
+# ---------- PRODUCTION  ------------ 
+# --------- Define Compute ------------
+compute         RDF all rdf 20 1 1 1 2 1 3
+# -------- Customize Output  ---------
+thermo          100
+thermo_style    custom step temp pe ke etotal vol
+
+dump            myDump1 all custom 100 Dumpfiles/_*.dump id type element x y z vx vy vz fx fy fz
+dump_modify     myDump1 element Li Mn O
+# ---------- Production step  ------------
+fix             integrate2 all nvt temp 670.0 670.0 10.0
+fix 		1 all ave/time 10 10 100 c_RDF[*] file RDF.data mode vector
+
+run             50000
+unfix           integrate2
