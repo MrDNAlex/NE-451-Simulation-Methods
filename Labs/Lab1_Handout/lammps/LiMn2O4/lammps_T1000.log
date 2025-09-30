@@ -1,0 +1,127 @@
+
+# --------------------- INITIALIZATION ---------------------
+units           metal
+atom_style      atomic
+boundary        p p p
+atom_modify     map array
+
+# --------------------- READ STRUCTURE ---------------------
+read_data       structure.lmp
+Reading data file ...
+  triclinic box = (0 0 0) to (23.822354 20.630764 19.450871) with tilt (11.911177 11.911177 6.8769212)
+WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain.cpp:221)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  896 atoms
+  read_data CPU = 0.026 seconds
+
+# --------------------- MASSES -----------------------------
+mass 1 6.941       # Li
+mass 2 54.938049   # Mn
+mass 3 15.9994     # O
+
+# --------------------- GROUPS -----------------------------
+group Li type 1
+128 atoms in group Li
+group Mn type 2
+256 atoms in group Mn
+group O  type 3
+512 atoms in group O
+
+# --------------------- FORCE FIELD ------------------------
+pair_style      meam
+pair_coeff      * * library.meam Li Mn O LiMnO.meam Li Mn O
+
+# --------------------- ENERGY MINIMIZATION ----------------
+minimize        1.0e-4 1.0e-7 1000 10000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 6.8
+  ghost atom cutoff = 6.8
+  binsize = 3.4, bins = 15 9 6
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair meam, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+  (2) pair meam, perpetual, half/full from (1)
+      attributes: half, newton on
+      pair build: halffull/newton/tri
+      stencil: none
+      bin: none
+Per MPI rank memory allocation (min/avg/max) = 12.26 | 12.26 | 12.26 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0             -1706.677       0             -1706.677      -12211.749    
+         2   0             -1720.4719      0             -1720.4719     -30739.961    
+Loop time of 0.255476 on 1 procs for 2 steps with 896 atoms
+
+100.0% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+     -1706.67701229482  -1720.44843675169  -1720.47194544603
+  Force two-norm initial, final = 17.964567 0.042484055
+  Force max component initial, final = 0.79393726 0.0018780585
+  Final line search alpha, max atom move = 1 0.0018780585
+  Iterations, force evaluations = 2 4
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.25496    | 0.25496    | 0.25496    |   0.0 | 99.80
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.00026891 | 0.00026891 | 0.00026891 |   0.0 |  0.11
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.0002517  |            |       |  0.10
+
+Nlocal:            896 ave         896 max         896 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           3779 ave        3779 max        3779 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:          54528 ave       54528 max       54528 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:       109056 ave      109056 max      109056 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 109056
+Ave neighs/atom = 121.71429
+Neighbor list builds = 0
+Dangerous builds = 0
+
+# --------------------- VELOCITY INIT ---------------------
+velocity        all create ${temp} ${seed} mom yes rot yes dist gaussian
+velocity        all create 1000 ${seed} mom yes rot yes dist gaussian
+velocity        all create 1000 12345 mom yes rot yes dist gaussian
+timestep        ${dt}
+timestep        0.001
+
+# ==========================================================
+# STAGE 1: NPT Equilibration (Relax structure at target T & P=0)
+# ==========================================================
+fix eq all npt temp ${temp} ${temp} 10.0 iso 0.0 0.0 1000.0
+fix eq all npt temp 1000 ${temp} 10.0 iso 0.0 0.0 1000.0
+fix eq all npt temp 1000 1000 10.0 iso 0.0 0.0 1000.0
+
+thermo          100
+thermo_style    custom step temp pe ke etotal press vol
+
+run             ${eqsteps}
+run             20000
+Per MPI rank memory allocation (min/avg/max) = 11.19 | 11.19 | 11.19 Mbytes
+   Step          Temp          PotEng         KinEng         TotEng         Press          Volume    
+         2   1000          -1720.4719      115.68783     -1604.7841     -17813.854      9559.5846    
+       100   416.96988     -1652.9513      48.23834      -1604.713       3497.9873      9559.5846    
+       200   516.25623     -1664.4297      59.724563     -1604.7051      4006.2514      9559.5847    
+       300   502.36878     -1662.8124      58.117954     -1604.6944      2703.4153      9559.5848    
+       400   501.39118     -1662.6825      58.004858     -1604.6776      1938.068       9559.585     
+       500   509.20471     -1663.5567      58.908788     -1604.6479      948.86767      9559.5852    
+       600   515.35872     -1664.2409      59.620732     -1604.6201      1737.9609      9559.5854    
+       700   475.35893     -1659.5656      54.993243     -1604.5724      3668.2726      9559.5858    
+       800   503.18274     -1662.7491      58.21212      -1604.537       2495.8401      9559.5861    
+       900   498.67637     -1662.1709      57.690787     -1604.4802      2223.6991      9559.5865    
+      1000   506.29047     -1663.002       58.571646     -1604.4304      1585.3713      9559.587     
+      1100   505.9044      -1662.8938      58.526982     -1604.3668      2386.3521      9559.5876    

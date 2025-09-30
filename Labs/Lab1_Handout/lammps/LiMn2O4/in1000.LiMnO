@@ -4,7 +4,7 @@
 # ==========================================================
 
 # --------------------- VARIABLES --------------------------
-variable temp       equal 800          # <-- Change for each temperature
+variable temp       equal 1000          # <-- Change for each temperature
 variable eqsteps    equal 20000
 variable prodsteps  equal 50000
 variable dt        equal 0.001

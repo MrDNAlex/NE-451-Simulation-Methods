@@ -6,4 +6,4 @@
 ##SBATCH --mem=6G            # Memory per node
 module load class-simulations
 
-/scic/app/cpu/lammps/2025-04-02/bin/lmp -in in.LiMnO
+/scic/app/cpu/lammps/2025-04-02/bin/lmp -in in1400.LiMnO

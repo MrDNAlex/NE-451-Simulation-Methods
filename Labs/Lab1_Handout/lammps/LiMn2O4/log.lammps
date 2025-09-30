@@ -1,0 +1,18 @@
+LAMMPS (2 Apr 2025)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
+  using 1 OpenMP thread(s) per MPI task
+# ==========================================================
+# LAMMPS Input Script: Li-Mn-O Diffusion
+# Workflow: NPT Equilibration -> NVT Production (MSD)
+# ==========================================================
+
+# --------------------- VARIABLES --------------------------
+variable temp       equal 1200          # <-- Change for each temperature
+variable eqsteps    equal 20000
+variable prodsteps  equal 50000
+variable dt        equal 0.001
+variable seed      equal 12345
+
+# --------------------- LOG FILE --------------------------
+log lammps_T${temp}.log
+log lammps_T1200.log
