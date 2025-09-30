@@ -7,7 +7,7 @@ OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99
 # ==========================================================
 
 # --------------------- VARIABLES --------------------------
-variable temp       equal 1200          # <-- Change for each temperature
+variable temp       equal 1400          # <-- Change for each temperature
 variable eqsteps    equal 20000
 variable prodsteps  equal 50000
 variable dt        equal 0.001
@@ -15,4 +15,4 @@ variable seed      equal 12345
 
 # --------------------- LOG FILE --------------------------
 log lammps_T${temp}.log
-log lammps_T1200.log
+log lammps_T1400.log

@@ -1,14 +1,7 @@
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
 LAMMPS (2 Apr 2025)
 OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
   using 1 OpenMP thread(s) per MPI task
-# ------------------------ INITIALIZATION ----------------------
-units           metal
-boundary        p p p
-atom_style	atomic
-
-
-# ---------- Read_data     ---------------------
-read_data 	structure.lmp
 Reading data file ...
   triclinic box = (0 0 0) to (11.911177 10.315382 9.7254353) with tilt (-5.9555885 -5.9555885 3.4384606)
 WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain.cpp:221)
@@ -16,57 +9,9 @@ WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain
   reading atoms ...
   112 atoms
   read_data CPU = 0.008 seconds
-
-
-# ----------------------- VARIABLES ---------------------
-variable        dt equal 0.001
-
-
-# --------- Group Atoms -----------
-group 		Li type 1
 16 atoms in group Li
-group 		Mn type 2
 32 atoms in group Mn
-group 		O  type 3
 64 atoms in group O
-
-
-# ------------------------ FORCE FIELDS -----------------------
-pair_style	meam
-pair_coeff * * library.meam Li Mn O LiMnO.meam Li Mn O
-
-
-# ---------- Define MSD -------------
-compute         MSDLi Li msd
-compute         MSDMn Mn msd
-compute         MSDO  O  msd
-
-
-# -------- Customize Output  ---------
-thermo          100
-dump            myDump1 all custom 100 Dumpfiles/_*.dump id type element x y z vx vy vz fx fy fz
-dump_modify 	myDump1 element Li Mn O
-
-
-# ---------- Relax ------------
-timestep        ${dt}
-timestep        0.001
-velocity        all create 670.0 123
-
-fix             integrate1 all npt temp 670.0 670.0 10.0 aniso 0.0 0.0 10.0
-fix             v_Li Li vector 1 c_MSDLi[4]
-fix		v_Mn Mn vector 1 c_MSDMn[4]
-fix		v_O O vector 1 c_MSDO[4]
-
-variable        Li_slope equal slope(f_v_Li)/6/(1*${dt})
-variable        Li_slope equal slope(f_v_Li)/6/(1*0.001)
-variable        Mn_slope equal slope(f_v_Mn)/6/(1*${dt})
-variable        Mn_slope equal slope(f_v_Mn)/6/(1*0.001)
-variable        O_slope equal slope(f_v_O)/6/(1*${dt})
-variable        O_slope equal slope(f_v_O)/6/(1*0.001)
-
-thermo_style    custom step temp pe ke etotal  c_MSDLi[4] c_MSDMn[4] c_MSDO[4] v_Li_slope v_Mn_slope v_O_slope
-run             50000
 Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
   max neighbors/atom: 2000, page size: 100000
@@ -84,6 +29,10 @@ Neighbor list info ...
       pair build: halffull/newton/tri
       stencil: none
       bin: none
+Setting up Verlet run ...
+  Unit style    : metal
+  Current step  : 0
+  Time step     : 0.001
 Per MPI rank memory allocation (min/avg/max) = 10.31 | 10.31 | 10.31 Mbytes
    Step          Temp          PotEng         KinEng         TotEng       c_MSDLi[4]     c_MSDMn[4]     c_MSDO[4]      v_Li_slope     v_Mn_slope     v_O_slope   
          0   670           -213.33463      9.613077      -203.72155      9.3677232e-31  5.7315675e-31  3.6022594e-30  1.6666667e+22  1.6666667e+22  1.6666667e+22
@@ -615,15 +564,8 @@ Total # of neighbors = 14600
 Ave neighs/atom = 130.35714
 Neighbor list builds = 99
 Dangerous builds = 0
-unfix           integrate1
-
-print "Diffusion Coefficient for Li (A^2/ps) = ${Li_slope};"
 Diffusion Coefficient for Li (A^2/ps) = 0.0152401718185017;
-print "Diffusion Coefficient for Mn (A^2/ps) = ${Mn_slope};"
 Diffusion Coefficient for Mn (A^2/ps) = 0.00024574355869551;
-print "Diffusion Coefficient for O (A^2/ps) = ${O_slope};"
 Diffusion Coefficient for O (A^2/ps) = 0.000415191408889034;
-
-print "All done!"
 All done!
 Total wall time: 0:05:06
