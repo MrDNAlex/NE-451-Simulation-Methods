@@ -6,6 +6,9 @@ units lj
 atom_style atomic
 
 # Create a Simulation Box
+
+
+
 lattice fcc 0.8442
 region box block 0 10 0 10 0 10
 create_box 1 box
