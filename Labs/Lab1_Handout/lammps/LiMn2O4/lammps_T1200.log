@@ -8,12 +8,12 @@ atom_modify     map array
 # --------------------- READ STRUCTURE ---------------------
 read_data       structure.lmp
 Reading data file ...
-  triclinic box = (0 0 0) to (23.822354 20.630764 19.450871) with tilt (11.911177 11.911177 6.8769212)
+  triclinic box = (0 0 0) to (35.733531 30.946146 29.176306) with tilt (17.866765 17.866765 10.315382)
 WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain.cpp:221)
   1 by 1 by 1 MPI processor grid
   reading atoms ...
-  896 atoms
-  read_data CPU = 0.023 seconds
+  3024 atoms
+  read_data CPU = 0.048 seconds
 
 # --------------------- MASSES -----------------------------
 mass 1 6.941       # Li
@@ -22,11 +22,11 @@ mass 3 15.9994     # O
 
 # --------------------- GROUPS -----------------------------
 group Li type 1
-128 atoms in group Li
+432 atoms in group Li
 group Mn type 2
-256 atoms in group Mn
+864 atoms in group Mn
 group O  type 3
-512 atoms in group O
+1728 atoms in group O
 
 # --------------------- FORCE FIELD ------------------------
 pair_style      meam
@@ -39,7 +39,7 @@ Neighbor list info ...
   max neighbors/atom: 2000, page size: 100000
   master list distance cutoff = 6.8
   ghost atom cutoff = 6.8
-  binsize = 3.4, bins = 15 9 6
+  binsize = 3.4, bins = 22 13 9
   2 neighbor lists, perpetual/occasional/extra = 2 0 0
   (1) pair meam, perpetual
       attributes: full, newton on
@@ -51,19 +51,19 @@ Neighbor list info ...
       pair build: halffull/newton/tri
       stencil: none
       bin: none
-Per MPI rank memory allocation (min/avg/max) = 12.26 | 12.26 | 12.26 Mbytes
+Per MPI rank memory allocation (min/avg/max) = 17.05 | 17.05 | 17.05 Mbytes
    Step          Temp          E_pair         E_mol          TotEng         Press     
-         0   0             -1706.677       0             -1706.677      -12211.749    
-         2   0             -1720.4719      0             -1720.4719     -30739.961    
-Loop time of 0.255134 on 1 procs for 2 steps with 896 atoms
+         0   0             -5760.0349      0             -5760.0349     -12211.749    
+         2   0             -5806.5928      0             -5806.5928     -30739.961    
+Loop time of 0.870927 on 1 procs for 2 steps with 3024 atoms
 
-99.9% CPU use with 1 MPI tasks x 1 OpenMP threads
+100.0% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 Minimization stats:
   Stopping criterion = energy tolerance
   Energy initial, next-to-last, final = 
-     -1706.67701229482  -1720.44843675169  -1720.47194544603
-  Force two-norm initial, final = 17.964567 0.042484055
+     -5760.03491649572  -5806.51347403562  -5806.59281587959
+  Force two-norm initial, final = 33.003018 0.078048193
   Force max component initial, final = 0.79393726 0.0018780585
   Final line search alpha, max atom move = 1 0.0018780585
   Iterations, force evaluations = 2 4
@@ -71,23 +71,23 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.25462    | 0.25462    | 0.25462    |   0.0 | 99.80
+Pair    | 0.86948    | 0.86948    | 0.86948    |   0.0 | 99.83
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00025877 | 0.00025877 | 0.00025877 |   0.0 |  0.10
+Comm    | 0.00062317 | 0.00062317 | 0.00062317 |   0.0 |  0.07
 Output  | 0          | 0          | 0          |   0.0 |  0.00
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0002501  |            |       |  0.10
+Other   |            | 0.0008245  |            |       |  0.09
 
-Nlocal:            896 ave         896 max         896 min
+Nlocal:           3024 ave        3024 max        3024 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Nghost:           3779 ave        3779 max        3779 min
+Nghost:           6965 ave        6965 max        6965 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Neighs:          54528 ave       54528 max       54528 min
+Neighs:         184032 ave      184032 max      184032 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-FullNghs:       109056 ave      109056 max      109056 min
+FullNghs:       368064 ave      368064 max      368064 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
 
-Total # of neighbors = 109056
+Total # of neighbors = 368064
 Ave neighs/atom = 121.71429
 Neighbor list builds = 0
 Dangerous builds = 0
@@ -111,17 +111,6 @@ thermo_style    custom step temp pe ke etotal press vol
 
 run             ${eqsteps}
 run             20000
-Per MPI rank memory allocation (min/avg/max) = 11.19 | 11.19 | 11.19 Mbytes
+Per MPI rank memory allocation (min/avg/max) = 16.06 | 16.06 | 16.06 Mbytes
    Step          Temp          PotEng         KinEng         TotEng         Press          Volume    
-         2   1200          -1720.4719      138.8254      -1581.6465     -15228.632      9559.5846    
-       100   504.64361     -1639.9469      58.381124     -1581.5658      7751.4723      9559.5846    
-       200   614.23561     -1652.6269      71.059585     -1581.5674      8985.4076      9559.5848    
-       300   578.74654     -1648.4939      66.953931     -1581.5399      6467.9778      9559.5852    
-       400   594.24114     -1650.2665      68.746468     -1581.52        7926.713       9559.5857    
-       500   594.97866     -1650.327       68.83179      -1581.4952      7912.7797      9559.5863    
-       600   599.51068     -1650.8041      69.35609      -1581.448       8681.4485      9559.587     
-       700   600.32888     -1650.8586      69.450745     -1581.4078      6152.5401      9559.588     
-       800   588.54415     -1649.4393      68.087395     -1581.3519      8693.8908      9559.589     
-       900   561.10251     -1646.1989      64.912731     -1581.2862      8183.4705      9559.5903    
-      1000   612.27592     -1652.071       70.832872     -1581.2382      6684.2612      9559.5916    
-      1100   589.16902     -1649.3253      68.159685     -1581.1656      8742.0949      9559.5931    
+         2   1200          -5806.5928      468.9041      -5337.6887     -15216.436      32263.598    

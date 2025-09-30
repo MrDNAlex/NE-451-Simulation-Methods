@@ -1,12 +1,7 @@
-
-# --------------------- INITIALIZATION ---------------------
-units           metal
-atom_style      atomic
-boundary        p p p
-atom_modify     map array
-
-# --------------------- READ STRUCTURE ---------------------
-read_data       structure.lmp
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
+LAMMPS (2 Apr 2025)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
+  using 1 OpenMP thread(s) per MPI task
 Reading data file ...
   triclinic box = (0 0 0) to (35.733531 30.946146 29.176306) with tilt (17.866765 17.866765 10.315382)
 WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain.cpp:221)
@@ -14,26 +9,9 @@ WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain
   reading atoms ...
   3024 atoms
   read_data CPU = 0.081 seconds
-
-# --------------------- MASSES -----------------------------
-mass 1 6.941       # Li
-mass 2 54.938049   # Mn
-mass 3 15.9994     # O
-
-# --------------------- GROUPS -----------------------------
-group Li type 1
 432 atoms in group Li
-group Mn type 2
 864 atoms in group Mn
-group O  type 3
 1728 atoms in group O
-
-# --------------------- FORCE FIELD ------------------------
-pair_style      meam
-pair_coeff      * * library.meam Li Mn O LiMnO.meam Li Mn O
-
-# --------------------- ENERGY MINIMIZATION ----------------
-minimize        1.0e-4 1.0e-7 1000 10000
 Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
   max neighbors/atom: 2000, page size: 100000
@@ -51,6 +29,9 @@ Neighbor list info ...
       pair build: halffull/newton/tri
       stencil: none
       bin: none
+Setting up cg style minimization ...
+  Unit style    : metal
+  Current step  : 0
 Per MPI rank memory allocation (min/avg/max) = 17.05 | 17.05 | 17.05 Mbytes
    Step          Temp          E_pair         E_mol          TotEng         Press     
          0   0             -5760.0349      0             -5760.0349     -12211.749    
@@ -91,26 +72,9 @@ Total # of neighbors = 368064
 Ave neighs/atom = 121.71429
 Neighbor list builds = 0
 Dangerous builds = 0
-
-# --------------------- VELOCITY INIT ---------------------
-velocity        all create ${temp} ${seed} mom yes rot yes dist gaussian
-velocity        all create 800 ${seed} mom yes rot yes dist gaussian
-velocity        all create 800 12345 mom yes rot yes dist gaussian
-timestep        ${dt}
-timestep        0.001
-
-# ==========================================================
-# STAGE 1: NPT Equilibration (Relax structure at target T & P=0)
-# ==========================================================
-fix eq all npt temp ${temp} ${temp} 10.0 iso 0.0 0.0 1000.0
-fix eq all npt temp 800 ${temp} 10.0 iso 0.0 0.0 1000.0
-fix eq all npt temp 800 800 10.0 iso 0.0 0.0 1000.0
-
-thermo          100
-thermo_style    custom step temp pe ke etotal press vol
-
-run             ${eqsteps}
-run             20000
+Setting up Verlet run ...
+  Unit style    : metal
+  Current step  : 2
+  Time step     : 0.001
 Per MPI rank memory allocation (min/avg/max) = 16.06 | 16.06 | 16.06 Mbytes
    Step          Temp          PotEng         KinEng         TotEng         Press          Volume    
-         2   800           -5806.5928      312.60273     -5493.9901     -20390.944      32263.598    
