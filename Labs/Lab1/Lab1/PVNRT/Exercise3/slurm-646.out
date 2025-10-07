@@ -1,55 +1,14 @@
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
 LAMMPS (2 Apr 2025)
 OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
   using 1 OpenMP thread(s) per MPI task
-# Define Variables
-variable temp equal 300
-variable rdf_bins equal 200
-variable sim_run equal 2
-
-# Define the Units
-units real
-atom_style atomic
-
-# Create a Simulation Box
-read_data Ar.data
 Reading data file ...
   orthogonal box = (0 0 0) to (42.08 42.08 42.08)
   1 by 1 by 1 MPI processor grid
   reading atoms ...
   2048 atoms
-  read_data CPU = 0.042 seconds
-
-# Assign the Group to Argon and Assign it's mass
-group Ar type 1
+  read_data CPU = 0.025 seconds
 2048 atoms in group Ar
-mass 1 39.948
-
-# Define the Potential of the Simulation
-pair_style lj/cut 10.0
-pair_coeff 1 1 1.0 1.0
-
-# Set the initial velocity
-velocity all create ${temp} 54343
-velocity all create 300 54343
-
-# Define the Thermodynamics Output
-thermo 100
-thermo_style custom step temp press vol etotal
-
-# Compute the RDF
-compute RDF all rdf ${rdf_bins}
-compute RDF all rdf 200
-
-# Run the Simulation
-fix integrate1 all nvt temp ${temp} ${temp} 5.0
-fix integrate1 all nvt temp 300 ${temp} 5.0
-fix integrate1 all nvt temp 300 300 5.0
-fix rdf_pre all ave/time 100 10 1000 c_RDF[*] file RDF_Pre_Sim${sim_run}.data mode vector
-fix rdf_pre all ave/time 100 10 1000 c_RDF[*] file RDF_Pre_Sim2.data mode vector
-timestep 0.005
-
-# Run the Simulation
-run 20000
 Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
 Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
@@ -68,6 +27,10 @@ Neighbor list info ...
       pair build: copy
       stencil: none
       bin: none
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 0.005
 Per MPI rank memory allocation (min/avg/max) = 4.093 | 4.093 | 4.093 Mbytes
    Step          Temp          Press          Volume         TotEng    
          0   300            1082.6031      74512.167      1808.56      
@@ -271,20 +234,20 @@ Per MPI rank memory allocation (min/avg/max) = 4.093 | 4.093 | 4.093 Mbytes
      19800   307.05887      1103.7011      74512.167      1848.7314    
      19900   306.39118      1101.1393      74512.167      1844.6233    
      20000   305.65937      1098.337       74512.167      1840.1237    
-Loop time of 121.09 on 1 procs for 20000 steps with 2048 atoms
+Loop time of 121.545 on 1 procs for 20000 steps with 2048 atoms
 
-Performance: 0.071 ns/day, 336.360 hours/ns, 165.167 timesteps/s, 338.262 katom-step/s
+Performance: 0.071 ns/day, 337.626 hours/ns, 164.548 timesteps/s, 336.994 katom-step/s
 100.0% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 115.35     | 115.35     | 115.35     |   0.0 | 95.26
+Pair    | 115.84     | 115.84     | 115.84     |   0.0 | 95.30
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 1.5465     | 1.5465     | 1.5465     |   0.0 |  1.28
-Output  | 0.0064377  | 0.0064377  | 0.0064377  |   0.0 |  0.01
-Modify  | 3.4836     | 3.4836     | 3.4836     |   0.0 |  2.88
-Other   |            | 0.7055     |            |       |  0.58
+Comm    | 1.5521     | 1.5521     | 1.5521     |   0.0 |  1.28
+Output  | 0.005501   | 0.005501   | 0.005501   |   0.0 |  0.00
+Modify  | 3.485      | 3.485      | 3.485      |   0.0 |  2.87
+Other   |            | 0.6657     |            |       |  0.55
 
 Nlocal:           2048 ave        2048 max        2048 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -297,20 +260,11 @@ Total # of neighbors = 204800
 Ave neighs/atom = 100
 Neighbor list builds = 0
 Dangerous builds = 0
-unfix integrate1
-
-# Output the RDF Data to the Dump Folder
-fix integrate2 all nvt temp ${temp} ${temp} 5.0
-fix integrate2 all nvt temp 300 ${temp} 5.0
-fix integrate2 all nvt temp 300 300 5.0
-
-# Dump the files for the positions of the Atoms every 100 Frames
-dump            myDump1 all custom 100 Dumpfiles/_*.dump id type element x y z vx vy vz fx fy fz
-dump_modify 	myDump1 element Ar
-
-# Run the Simulation
-run 500000
 Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 20000
+  Time step     : 0.005
 Per MPI rank memory allocation (min/avg/max) = 5.237 | 5.237 | 5.237 Mbytes
    Step          Temp          Press          Volume         TotEng    
      20000   305.65937      1098.337       74512.167      1840.1237    
@@ -5314,20 +5268,20 @@ Per MPI rank memory allocation (min/avg/max) = 5.237 | 5.237 | 5.237 Mbytes
     519800   305.18221      914.40749      74512.167      1310.6583    
     519900   305.93304      914.37089      74512.167      1314.943     
     520000   306.47563      913.53863      74512.167      1317.9554    
-Loop time of 3061.69 on 1 procs for 500000 steps with 2048 atoms
+Loop time of 3056.06 on 1 procs for 500000 steps with 2048 atoms
 
-Performance: 0.071 ns/day, 340.188 hours/ns, 163.309 timesteps/s, 334.456 katom-step/s
-99.3% CPU use with 1 MPI tasks x 1 OpenMP threads
+Performance: 0.071 ns/day, 339.562 hours/ns, 163.610 timesteps/s, 335.072 katom-step/s
+99.4% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 2795.4     | 2795.4     | 2795.4     |   0.0 | 91.30
-Neigh   | 0.2225     | 0.2225     | 0.2225     |   0.0 |  0.01
-Comm    | 38.343     | 38.343     | 38.343     |   0.0 |  1.25
-Output  | 124.06     | 124.06     | 124.06     |   0.0 |  4.05
-Modify  | 86.066     | 86.066     | 86.066     |   0.0 |  2.81
-Other   |            | 17.59      |            |       |  0.57
+Pair    | 2793.7     | 2793.7     | 2793.7     |   0.0 | 91.41
+Neigh   | 0.22296    | 0.22296    | 0.22296    |   0.0 |  0.01
+Comm    | 38.449     | 38.449     | 38.449     |   0.0 |  1.26
+Output  | 120.86     | 120.86     | 120.86     |   0.0 |  3.95
+Modify  | 86.129     | 86.129     | 86.129     |   0.0 |  2.82
+Other   |            | 16.71      |            |       |  0.55
 
 Nlocal:           2048 ave        2048 max        2048 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -5340,5 +5294,4 @@ Total # of neighbors = 203201
 Ave neighs/atom = 99.219238
 Neighbor list builds = 22
 Dangerous builds = 0
-unfix integrate2
-Total wall time: 0:53:02
+Total wall time: 0:52:57

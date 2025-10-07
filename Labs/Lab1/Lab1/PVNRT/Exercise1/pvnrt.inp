@@ -34,7 +34,7 @@ fix 1 all ave/time 100 10 1000 c_RDF[*] file RDF_Pre_Sim${sim_run}.data mode vec
 timestep 0.005
 
 # Run the Simulation
-run 1000
+run 20000
 unfix integrate1
 
 # Output the RDF Data to the Dump Folder

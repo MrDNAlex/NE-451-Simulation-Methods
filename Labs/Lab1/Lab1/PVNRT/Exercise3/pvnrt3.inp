@@ -1,7 +1,7 @@
 # Define Variables
-variable temp equal 300
-variable rdf_bins equal 50
-variable sim_run equal 1
+variable temp equal 500
+variable rdf_bins equal 200
+variable sim_run equal 3
 
 # Define the Units
 units real
@@ -30,21 +30,20 @@ compute RDF all rdf ${rdf_bins}
 
 # Run the Simulation
 fix integrate1 all nvt temp ${temp} ${temp} 5.0
-fix 1 all ave/time 100 10 1000 c_RDF[*] file RDF_Pre_Sim${sim_run}.data mode vector
+fix rdf_pre all ave/time 100 10 1000 c_RDF[*] file RDF_Pre_Sim${sim_run}.data mode vector
 timestep 0.005
 
 # Run the Simulation
-run 1000
+run 20000
 unfix integrate1
 
 # Output the RDF Data to the Dump Folder
 fix integrate2 all nvt temp ${temp} ${temp} 5.0
-fix 1 all ave/time 100 10 1000 c_RDF[*] file RDF_Sim${sim_run}.data mode vector
 
 # Dump the files for the positions of the Atoms every 100 Frames
 dump            myDump1 all custom 100 Dumpfiles/_*.dump id type element x y z vx vy vz fx fy fz
 dump_modify 	myDump1 element Ar
 
 # Run the Simulation
-run 100000
+run 500000
 unfix integrate2
