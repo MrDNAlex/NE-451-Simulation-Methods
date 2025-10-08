@@ -2,6 +2,7 @@
 variable temp equal 2.5
 variable rdf_bins equal 50
 variable sim_run equal 4
+variable cut_off equal 2.5
 
 # Define the Units
 units lj
@@ -15,7 +16,7 @@ group Ar type 1
 mass 1 1.0
 
 # Define the Potential of the Simulation
-pair_style lj/cut 2.5
+pair_style lj/cut ${cut_off}
 pair_coeff 1 1 1.0 1.0
 
 # Set the initial velocity
