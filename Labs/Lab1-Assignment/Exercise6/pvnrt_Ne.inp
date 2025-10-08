@@ -1,18 +1,19 @@
 # Define Variables
 variable temp equal 1.5
 variable rdf_bins equal 50
-variable sim_run equal 1
+variable sim_run equal 3
 variable cut_off equal 2.5
+variable dt equal 0.005
 
 # Define the Units
 units lj
 atom_style atomic
 
 # Create a Simulation Box
-read_data Ar.data
+read_data Ne.data
 
-# Assign the Group to Argon and Assign it's mass
-group Ar type 1
+# Assign the Group to Neon and Assign it's mass
+group Ne type 1
 mass 1 1.0
 
 # Define the Potential of the Simulation
@@ -22,31 +23,39 @@ pair_coeff 1 1 1.0 1.0
 # Set the initial velocity
 velocity all create ${temp} 54343
 
-# Define the Thermodynamics Output
-thermo 100
-thermo_style custom step temp press vol etotal
-timestep 0.005
-
-# Compute the RDF
+# Compute the RDF and MSD
 compute RDF all rdf ${rdf_bins}
+compute MSD all msd 
 
 # Run the Simulation
 fix integrate1 all npt temp ${temp} ${temp} 1 iso 5 5 1
 fix 1 all ave/time 100 10 1000 c_RDF[*] file RDF_Pre_Sim${sim_run}.data mode vector
+fix m_MSD Ne vector 1 c_MSD[4]
 
+variable MSD_Slope equal slope(f_m_MSD)/6/(1*${dt})
+
+# Define the Thermodynamics Output
+thermo 100
+thermo_style custom step temp press vol etotal c_MSD[4] v_MSD_Slope
+timestep ${dt}
 
 # Run the Simulation
 run 20000
 unfix integrate1
+unfix m_MSD
 
 # Output the RDF Data to the Dump Folder
 fix integrate2 all nve
 fix 1 all ave/time 100 10 1000 c_RDF[*] file RDF_Sim${sim_run}.data mode vector
+fix m_MSD Ne vector 1 c_MSD[4]
+
+variable MSD_Slope equal slope(f_m_MSD)/6/(1*${dt})
 
 # Dump the files for the positions of the Atoms every 100 Frames
 dump            myDump1 all custom 100 Dumpfiles/_*.dump id type element x y z vx vy vz fx fy fz
-dump_modify 	myDump1 element Ar
+dump_modify 	myDump1 element Ne
 
 # Run the Simulation
 run 80000
 unfix integrate2
+unfix m_MSD

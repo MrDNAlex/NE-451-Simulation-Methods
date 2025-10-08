@@ -6,5 +6,5 @@
 #SBATCH --mem=8G            # Memory per cpu
 module load class-simulations
 
-srun /scic/app/cpu/lammps/2025-04-02/bin/lmp < pvnrt.inp
+srun /scic/app/cpu/lammps/2025-04-02/bin/lmp < pvnrt_Kr.inp
 
