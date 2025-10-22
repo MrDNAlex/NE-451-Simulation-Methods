@@ -1,0 +1,15 @@
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
+LAMMPS (2 Apr 2025)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+Created orthogonal box = (0 0 0) to (16.795962 16.795962 16.795962)
+  1 by 1 by 1 MPI processor grid
+Created 4000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (16.795962 16.795962 16.795962)
+  create_atoms CPU = 0.004 seconds
+4000 atoms in group Ar
+ERROR: Unknown fix ave/time mode vec (src/fix_ave_time.cpp:1098)
+Last input line: fix 1 all ave/time 100 10 1000 c_myRDF[*] file rdf.dat mode vec 
+                                                                             ^^^
+srun: error: n007: task 0: Exited with exit code 1

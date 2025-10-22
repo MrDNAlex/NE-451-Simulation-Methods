@@ -1,0 +1,96 @@
+# ==========================================================
+# LAMMPS Input Script: Li-Mn-O Diffusion
+# Workflow: NPT Equilibration -> NVT Production (MSD)
+# ==========================================================
+
+# --------------------- VARIABLES --------------------------
+variable temp       equal 1400          # <-- Change for each temperature
+variable eqsteps    equal 20000
+variable prodsteps  equal 50000
+variable dt        equal 0.001
+variable seed      equal 12345
+
+# --------------------- LOG FILE --------------------------
+log lammps_T${temp}.log
+
+# --------------------- INITIALIZATION ---------------------
+units           metal
+atom_style      atomic
+boundary        p p p
+atom_modify     map array
+
+# --------------------- READ STRUCTURE ---------------------
+read_data       structure.lmp
+
+# --------------------- MASSES -----------------------------
+mass 1 6.941       # Li
+mass 2 54.938049   # Mn
+mass 3 15.9994     # O
+
+# --------------------- GROUPS -----------------------------
+group Li type 1
+group Mn type 2
+group O  type 3
+
+# --------------------- FORCE FIELD ------------------------
+pair_style      meam
+pair_coeff      * * library.meam Li Mn O LiMnO.meam Li Mn O
+
+# --------------------- ENERGY MINIMIZATION ----------------
+minimize        1.0e-4 1.0e-7 1000 10000
+
+# --------------------- VELOCITY INIT ---------------------
+velocity        all create ${temp} ${seed} mom yes rot yes dist gaussian
+timestep        ${dt}
+
+# ==========================================================
+# STAGE 1: NPT Equilibration (Relax structure at target T & P=0)
+# ==========================================================
+fix eq all npt temp ${temp} ${temp} 10.0 iso 0.0 0.0 1000.0
+
+thermo          100
+thermo_style    custom step temp pe ke etotal press vol
+
+run             ${eqsteps}
+unfix           eq
+
+# ==========================================================
+# STAGE 2: NVT Production for MSD / Diffusion
+# ==========================================================
+
+# ---- Compute MSD ----
+compute MSDLi Li msd
+compute MSDMn Mn msd
+compute MSDO  O  msd
+compute eng all pe/atom
+compute 1 all property/atom vx vy vz fx fy fz
+
+# ---- Dump trajectory ----
+dump myDump1 all custom 100 Dumpfiles/T${temp}/LiMnO_T${temp}_*.dump id type element x y z vx vy vz fx fy fz c_eng
+dump_modify myDump1 element Li Mn O
+
+# ---- NVT Dynamics ----
+fix prod all nvt temp ${temp} ${temp} 10.0
+
+# ---- Track MSD slopes ----
+fix v_Li Li vector 1 c_MSDLi[4]
+fix v_Mn Mn vector 1 c_MSDMn[4]
+fix v_O  O  vector 1 c_MSDO[4]
+
+variable Li_slope equal slope(f_v_Li)/(6*${dt})
+variable Mn_slope equal slope(f_v_Mn)/(6*${dt})
+variable O_slope  equal slope(f_v_O)/(6*${dt})
+
+thermo_style custom step temp pe ke etotal c_MSDLi[4] c_MSDMn[4] c_MSDO[4] v_Li_slope v_Mn_slope v_O_slope
+
+run ${prodsteps}
+unfix prod
+
+# --------------------- RESULTS ---------------------------
+print "------------------------------------------------------"
+print " Diffusion Coefficients (A^2/ps) at T = ${temp} K"
+print "   Li : ${Li_slope}"
+print "   Mn : ${Mn_slope}"
+print "   O  : ${O_slope}"
+print "------------------------------------------------------"
+print "All done!"

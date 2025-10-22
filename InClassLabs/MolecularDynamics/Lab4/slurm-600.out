@@ -1,0 +1,40 @@
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
+LAMMPS (2 Apr 2025)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+Created orthogonal box = (0 0 0) to (16.795962 16.795962 16.795962)
+  1 by 1 by 1 MPI processor grid
+Created 4000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (16.795962 16.795962 16.795962)
+  create_atoms CPU = 0.004 seconds
+4000 atoms in group Ar
+WARNING: No fixes with time integration, atoms won't move
+For more information see https://docs.lammps.org/err0028 (src/verlet.cpp:60)
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 12 12 12
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d
+      bin: standard
+  (2) compute rdf, occasional, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.005
+Per MPI rank memory allocation (min/avg/max) = 3.722 | 3.722 | 3.722 Mbytes
+   Step          Temp          Press          Volume         TotEng    
+         0   1.5           -4.9693338      4738.2137     -4.5239306    
+ERROR on proc 0: Cannot open dump file Dumpfiles/_0.dump:No such file or directory (src/dump.cpp:606)
+srun: error: n005: task 0: Exited with exit code 1

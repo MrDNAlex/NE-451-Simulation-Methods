@@ -1,0 +1,40 @@
+# LAMMPS input script for argon gas
+
+units           lj               # Use Lennard-Jones units
+atom_style      atomic           # Atomic style for molecular dynamics
+
+# Create simulation box
+lattice         fcc 0.8442      # FCC lattice for argon
+region          box block 0 10 0 10 0 10  # Define a cubic box
+create_box      1 box           # Create simulation box for 1 type of atom
+create_atoms    1 box           # Create argon atoms in the box
+
+mass 1 1.0 
+
+
+# Define potential
+pair_style      lj/cut 2.5      # Lennard-Jones potential with cutoff
+pair_coeff      1 1 1.0 1.0     # Argon parameters (epsilon, sigma)
+
+# Set initial conditions
+velocity        all create 1.5 12345   # Initialize velocities at 1.5 temperature
+
+# Define settings for output
+thermo          100             # Print thermodynamic data every 100 timesteps
+thermo_style    custom step temp press vol etotal # Custom thermo output
+
+# Compute RDF
+compute         myRDF all rdf 100  # Compute RDF with 100 bins
+
+# Output RDF data
+fix             1 all ave/time 100 10 1000 c_myRDF[*] file rdf.dat mode vec>
+
+
+
+# Run the simulation
+timestep        0.005            # Set the timestep size
+run             10000            # Run for 10,000 timesteps
+
+# Output RDF data
+#fix             1 all ave/time 100 10 1000 c_myRDF[*] file rdf.dat mode vector
+

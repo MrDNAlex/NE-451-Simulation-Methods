@@ -1,0 +1,13 @@
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
+LAMMPS (2 Apr 2025)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+Created orthogonal box = (0 0 0) to (16.795962 16.795962 16.795962)
+  1 by 1 by 1 MPI processor grid
+Created 4000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (16.795962 16.795962 16.795962)
+  create_atoms CPU = 0.004 seconds
+ERROR: Not all per-type masses are set. Type 1 is missing. (src/velocity.cpp:60)
+Last input line: velocity all create 1.5 12345 # Initialize velocities at 1.5 temperature
+srun: error: n001: task 0: Exited with exit code 1
