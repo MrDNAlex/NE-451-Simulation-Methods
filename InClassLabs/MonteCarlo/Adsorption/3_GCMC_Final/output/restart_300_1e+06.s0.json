@@ -1,0 +1,674 @@
+{
+  "atom": [
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 0,
+      "position": [
+        12.08877112216246,
+        3.478919429909091,
+        10.283297440794765
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": 0.6512,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 0,
+      "position": [
+        12.928339937340485,
+        4.197678324408745,
+        9.969114602055601
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 7,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 0,
+      "position": [
+        13.767908752518512,
+        4.916437218908399,
+        9.654931763316437
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 1,
+      "position": [
+        13.548720935310964,
+        2.1333069610139908,
+        4.662682933348906
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": 0.6512,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 1,
+      "position": [
+        14.082655929670565,
+        1.667521953568647,
+        3.7581616518760192
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 7,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 1,
+      "position": [
+        14.616590924030167,
+        1.2017369461233032,
+        2.8536403704031326
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 2,
+      "position": [
+        13.876913437926726,
+        16.083207020221167,
+        21.774539003435805
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": 0.6512,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 2,
+      "position": [
+        14.964847011404473,
+        16.242123396713524,
+        21.44085183709212
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 7,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 2,
+      "position": [
+        16.05278058488222,
+        16.40103977320588,
+        21.107164670748432
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 3,
+      "position": [
+        15.551421119576558,
+        14.327008653951363,
+        3.1940039524809842
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": 0.6512,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 3,
+      "position": [
+        15.470027362991004,
+        15.17291759464195,
+        3.9673176795339966
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 7,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 3,
+      "position": [
+        15.38863360640545,
+        16.018826535332536,
+        4.740631406587009
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 4,
+      "position": [
+        21.88326562591761,
+        11.258675574939701,
+        23.791927397041533
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": 0.6512,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 4,
+      "position": [
+        20.893377892985164,
+        11.043748811672437,
+        24.33426471146985
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 7,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 4,
+      "position": [
+        19.90349016005272,
+        10.828822048405172,
+        24.876602025898165
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 5,
+      "position": [
+        15.496053144320799,
+        9.868696460909588,
+        12.473245144493987
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": 0.6512,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 5,
+      "position": [
+        16.38718978631161,
+        10.273431464934669,
+        11.871359721993857
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 7,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "charge": -0.3256,
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "groupId": 0,
+      "moleculeId": 5,
+      "position": [
+        17.278326428302417,
+        10.67816646895975,
+        11.269474299493726
+      ],
+      "scalingCoulomb": 1.0,
+      "scalingVDW": 1.0,
+      "type": 8,
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "molecules": [
+    {
+      "centerOfMassPosition": [
+        12.928339937340485,
+        4.197678324408745,
+        9.969114602055601
+      ],
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 43.9988,
+      "numberOfAtoms": 3,
+      "orientation": [
+        0.3831042134104843,
+        0.46530746863844596,
+        -0.7859041030168277,
+        -0.1381117741459118
+      ],
+      "orientationGradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientationMomentum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "centerOfMassPosition": [
+        14.082655929670565,
+        1.667521953568647,
+        3.7581616518760192
+      ],
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 43.9988,
+      "numberOfAtoms": 3,
+      "orientation": [
+        0.20182199354008257,
+        0.256233270472457,
+        0.047406133679506086,
+        -0.9441213123937285
+      ],
+      "orientationGradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientationMomentum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "centerOfMassPosition": [
+        14.964847011404473,
+        16.242123396713524,
+        21.44085183709212
+      ],
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 43.9988,
+      "numberOfAtoms": 3,
+      "orientation": [
+        -0.595643428872733,
+        0.001123144193953274,
+        0.7945931565693468,
+        -0.11759829812125087
+      ],
+      "orientationGradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientationMomentum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "centerOfMassPosition": [
+        15.470027362991004,
+        15.17291759464195,
+        3.9673176795339966
+      ],
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 43.9988,
+      "numberOfAtoms": 3,
+      "orientation": [
+        -0.9146064873216949,
+        -0.0033099139774107316,
+        -0.03726934421055891,
+        -0.40261025049127513
+      ],
+      "orientationGradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientationMomentum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "centerOfMassPosition": [
+        20.893377892985164,
+        11.043748811672437,
+        24.33426471146985
+      ],
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 43.9988,
+      "numberOfAtoms": 3,
+      "orientation": [
+        0.17602287847543122,
+        0.8396546906492296,
+        0.20971993582580978,
+        0.46905596173717745
+      ],
+      "orientationGradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientationMomentum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "centerOfMassPosition": [
+        16.38718978631161,
+        10.273431464934669,
+        11.871359721993857
+      ],
+      "componentId": 0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 43.9988,
+      "numberOfAtoms": 3,
+      "orientation": [
+        -0.44668292136922144,
+        -0.19636012745540557,
+        0.872814132903918,
+        -0.010609312227311091
+      ],
+      "orientationGradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientationMomentum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "simulationBox": {
+    "angleAlpha": 1.0,
+    "angleBeta": 1.0,
+    "angleGamma": 1.0,
+    "lengthA": 25.669,
+    "lengthB": 25.669,
+    "lengthC": 25.669
+  }
+}
