@@ -1,0 +1,25 @@
+{
+  "SimulationType" : "MonteCarlo",
+  "NumberOfCycles" : 50000,
+  "NumberOfInitializationCycles" : 10000,
+  "NumberOfEquilibrationCycles" : 25000,
+  "PrintEvery" : 10000,
+  
+  "Systems" : [
+    {
+      "Type" : "Framework",
+      "Name" : "IRMOF-1",
+      "NumberOfUnitCells" : [1, 1, 1],
+      "ExternalTemperature" : 300,
+      "ChargeMethod" : "None"
+    }
+  ],
+
+  "Components" : [ 
+    {
+      "Name" : "helium",
+      "WidomProbability" : 1.0,
+      "CreateNumberOfMolecules" : 0
+    }
+  ]
+}
