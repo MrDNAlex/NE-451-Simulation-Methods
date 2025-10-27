@@ -1,0 +1,21 @@
+{
+  "SimulationType" : "MonteCarlo",
+  "NumberOfCycles" : 0,
+  "NumberOfInitializationCycles" : 0,
+  "NumberOfEquilibrationCycles" : 0,
+  "PrintEvery" : 100,
+  
+  "Systems" : [
+    {
+      "Type" : "Framework",
+      "Name" : "IRMOF-1",
+      "NumberOfUnitCells" : [1, 1, 1],
+      "HeliumVoidFraction" : 0.815,
+      "UseChargesFrom" : "ChargeEquilibration",
+      "ChargeMethod" : "Ewald",
+      "ExternalTemperature" : 300.0,
+      "ExternalPressure" : 0.0,
+      "CutOff" : 12.0
+    }
+  ]
+}
