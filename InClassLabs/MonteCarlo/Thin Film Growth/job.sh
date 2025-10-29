@@ -6,4 +6,4 @@
 module load spparks/2024.11.24
 
 # spparks
-spk_serial < in.thin_film.no.schwoebel
+spk_serial < in.thin_film.yes.schwoebel

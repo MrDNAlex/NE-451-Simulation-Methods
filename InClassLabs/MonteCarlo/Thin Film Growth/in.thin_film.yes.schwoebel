@@ -31,10 +31,12 @@ diag_style       energy stats yes
 diag_style	 diffusion
 diag_style	 propensity
 
-dump             2 image 5.0e10 image.dep.parallel.yes.loT.schw.*.png site site &
-                 crange 1 3 sdiam 2.5 size 1024 1024 zoom 2.0 view 0.0 0.0 &
-                 box no 0.01
-dump_modify      2 pad 5 scolor 1 blue scolor 2 red scolor 3 green
+dump             2 text 5.0e10 Yes/image.dep.parallel.yes.loT.schw.*.dump site x y z
+
+#dump             2 image 5.0e10 image.dep.parallel.yes.loT.schw.*.png site site &
+#                 crange 1 3 sdiam 2.5 size 1024 1024 zoom 2.0 view 0.0 0.0 &
+#                 box no 0.01
+#dump_modify      2 pad 5 scolor 1 blue scolor 2 red scolor 3 green
 
 stats		 1.0e11
 
