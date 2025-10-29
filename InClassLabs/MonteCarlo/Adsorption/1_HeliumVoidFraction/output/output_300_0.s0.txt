@@ -1,21 +1,24 @@
 Compiler and run-time data
 ===============================================================================
-RASPA 3.0.5
+RASPA 3.0.8
 
-Random seed: 1168747689
+Random seed: 3755224816
 
 Compiled as a 64-bits application
-Compiler: gcc Clang 20.1.5 (https://github.com/conda-forge/clangdev-feedstock ed2721dc1050089017cf02556fe1359353c3b823)
-Compile Date = May 21 2025, Compile Time = 00:58:16
+Compiler: gcc Clang 19.1.7
+Compile Date = Jul 28 2025, Compile Time = 20:19:58
 
-2025-10-27 14:34:23.440842534
+2025-10-27 20:04:01.993763
 Simulation started on Mon, Oct 27
-The start time was 14:34:00
+The start time was 20:04:00
 
-Hostname:    n021
-OS type:     Linux on x86_64
-OS release:  6.8.0-83-generic
-OS version:  #83-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  5 21:46:54 UTC 2025
+Cpu data:    arm64
+Cpu Model:   MacBookPro18,1
+Host name:  Anupoms-MacBook-Pro.locals
+OS release:  25.0.0
+OS type:     Darwin
+OS version:  25A362
+
 
 
 Mutual consistent basic set of units:
@@ -38,8 +41,8 @@ Unit of energy:                           1.6605402000000002e-23 [J]
 Unit of energy:                           10.000008872307538 [J.mol⁻¹]
 Unit of velocity:                         100 [m.s⁻¹]
 Unit of force:                            1.6605402000000002e-13 [N]
-Unit of diffusion:                        1e-08 [m².s⁻¹]
-Unit of acceleration:                     1e-08 [m².s⁻¹]
+Unit of diffusion:                        1.0000000000000002e-08 [m².s⁻¹]
+Unit of acceleration:                     1.0000000000000002e-08 [m².s⁻¹]
 Unit of torque:                           1.6605402000000002e-23 [N.m]
 Unit of pressure:                         16605402 [Pa]
 Unit of volume:                           1e-30 [m³]
@@ -126,8 +129,7 @@ Force field status
 
 Cutoff Framework-Molecule VDW:  12.00000 [Å]
 Cutoff Molecule-Molecule VDW:   12.00000 [Å]
-Cutoff Coulomb:                 12.00000 [Å]
-
+Cutoff Coulomb:                 auto
 Overlap-criteria VDW:           1.000000e+05 [K]
 
 Zn1      - Zn1      Lennard-Jones p₀/kʙ:   0.42000 [K], p₁:  2.70000 [Å]
@@ -204,7 +206,7 @@ He       - He       Lennard-Jones p₀/kʙ:  10.22000 [K], p₁:  2.57600 [Å]
                                   shift:  -0.00400 [K], tailcorrections: false
 
 Ewald precision: 1e-06
-Ewald alpha: 0.26505830360350674
+Ewald alpha: 0.24540328220483407
 Ewald k-vectors: 7 7 7
 
 
@@ -282,6 +284,8 @@ Component 0 [helium]
 
     number of blocking-pockets: 0
 
+    connectivity:
+
     number of bonds: 0
 
 
@@ -353,7 +357,11 @@ Rectangular boundary conditions
 Perpendicular widths:   25.83200  25.83200  25.83200
 
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component   0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
@@ -362,9 +370,11 @@ Amount of molecules per component :
 -------------------------------------------------------------------------------
 Component 0 (helium)
     absolute adsorption:  0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
     excess adsorption:    0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
 
@@ -400,7 +410,11 @@ Rectangular boundary conditions
 Perpendicular widths:   25.83200  25.83200  25.83200
 
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
@@ -409,9 +423,11 @@ Amount of molecules per component :
 -------------------------------------------------------------------------------
 Component 0 (helium)
     absolute adsorption:  0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
     excess adsorption:    0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
 
@@ -447,7 +463,11 @@ Rectangular boundary conditions
 Perpendicular widths:   25.83200  25.83200  25.83200
 
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
@@ -456,9 +476,11 @@ Amount of molecules per component :
 -------------------------------------------------------------------------------
 Component 0 (helium)
     absolute adsorption:  0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
     excess adsorption:    0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
 
@@ -494,7 +516,11 @@ Rectangular boundary conditions
 Perpendicular widths:   25.83200  25.83200  25.83200
 
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
@@ -503,9 +529,11 @@ Amount of molecules per component :
 -------------------------------------------------------------------------------
 Component 0 (helium)
     absolute adsorption:  0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
     excess adsorption:    0.000000e+00 molecules
+                          0.000000e+00 molecules/uc
                           0.000000e+00 mol/kg-framework
                           0.000000e+00 mg/g-framework
 
@@ -539,18 +567,23 @@ Lengths:  25.83200  25.83200  25.83200  Average:  25.83200  25.83200  25.83200
 Angles:   90.00000  90.00000  90.00000  Average:  90.00000  90.00000  90.00000
 Rectangular boundary conditions
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
 
 Amount of molecules per component :
 -------------------------------------------------------------------------------
-Component 0 (helium)
     absolute adsorption: 0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
     excess adsorption:   0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
 
@@ -569,6 +602,7 @@ Molecule-molecule
     Coulombic Real/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Coulombic Fourier/kʙ    0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Molecule Intra/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
+Polarization energy/kʙ      0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
 
 Current cycle: 10000 out of 50000
 ===============================================================================
@@ -580,18 +614,23 @@ Lengths:  25.83200  25.83200  25.83200  Average:  25.83200  25.83200  25.83200
 Angles:   90.00000  90.00000  90.00000  Average:  90.00000  90.00000  90.00000
 Rectangular boundary conditions
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
 
 Amount of molecules per component :
 -------------------------------------------------------------------------------
-Component 0 (helium)
     absolute adsorption: 0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
     excess adsorption:   0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
 
@@ -610,6 +649,7 @@ Molecule-molecule
     Coulombic Real/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Coulombic Fourier/kʙ    0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Molecule Intra/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
+Polarization energy/kʙ      0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
 
 Current cycle: 20000 out of 50000
 ===============================================================================
@@ -621,18 +661,23 @@ Lengths:  25.83200  25.83200  25.83200  Average:  25.83200  25.83200  25.83200
 Angles:   90.00000  90.00000  90.00000  Average:  90.00000  90.00000  90.00000
 Rectangular boundary conditions
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
 
 Amount of molecules per component :
 -------------------------------------------------------------------------------
-Component 0 (helium)
     absolute adsorption: 0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
     excess adsorption:   0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
 
@@ -651,6 +696,7 @@ Molecule-molecule
     Coulombic Real/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Coulombic Fourier/kʙ    0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Molecule Intra/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
+Polarization energy/kʙ      0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
 
 Current cycle: 30000 out of 50000
 ===============================================================================
@@ -662,18 +708,23 @@ Lengths:  25.83200  25.83200  25.83200  Average:  25.83200  25.83200  25.83200
 Angles:   90.00000  90.00000  90.00000  Average:  90.00000  90.00000  90.00000
 Rectangular boundary conditions
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
 
 Amount of molecules per component :
 -------------------------------------------------------------------------------
-Component 0 (helium)
     absolute adsorption: 0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
     excess adsorption:   0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
 
@@ -692,6 +743,7 @@ Molecule-molecule
     Coulombic Real/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Coulombic Fourier/kʙ    0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Molecule Intra/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
+Polarization energy/kʙ      0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
 
 Current cycle: 40000 out of 50000
 ===============================================================================
@@ -703,18 +755,23 @@ Lengths:  25.83200  25.83200  25.83200  Average:  25.83200  25.83200  25.83200
 Angles:   90.00000  90.00000  90.00000  Average:  90.00000  90.00000  90.00000
 Rectangular boundary conditions
 
-net charge:   0.00000000
+Net charge:   0.00000000
+Cutoff Coulomb:  12.91600 [Å]
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
 
 component 0 (helium) lambda:  0 occupancy:  1 (1.000000)
     net charge:   0.00000000 [e]
 
 Amount of molecules per component :
 -------------------------------------------------------------------------------
-Component 0 (helium)
     absolute adsorption: 0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
     excess adsorption:   0.000000e+00 molecules (0.000000e+00 +/- 0.000000e+00)
+                         0.000000e+00 molec./uc (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mol/kg    (0.000000e+00 +/- 0.000000e+00)
                          0.000000e+00 mg/g      (0.000000e+00 +/- 0.000000e+00)
 
@@ -733,6 +790,7 @@ Molecule-molecule
     Coulombic Real/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Coulombic Fourier/kʙ    0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
     Molecule Intra/kʙ       0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
+Polarization energy/kʙ      0.000000e+00 ( 0.000000e+00 +/- 0.000000e+00) [K]
 
 
 Energy statistics             |  Energy [K]   | Recomputed [K]|  Drift [K]    |
@@ -763,40 +821,52 @@ Monte-Carlo moves statistics
 Component 0 [helium]
     Widom                all:             1000000
     Widom                total:             1e+06
-    Widom                constructed:      999823
+    Widom                constructed:       1e+06
     Widom                accepted:              0
     Widom                fraction:       0.000000
     Widom                max-change:     0.000000
 
-    Widom insertion Rosenbluth weight  statistics:
+    Widom insertion Rosenbluth weight statistics:
     ---------------------------------------------------------------------------
-        Block[  0]  3.900092e+20
-        Block[  1]  3.249800e+19
-        Block[  2]  4.149583e+14
-        Block[  3]  8.932067e+18
-        Block[  4]  3.154858e+16
+        Block[  0]  8.110657e-01
+        Block[  1]  8.110744e-01
+        Block[  2]  8.115415e-01
+        Block[  3]  8.110339e-01
+        Block[  4]  8.110685e-01
     ---------------------------------------------------------------------------
-    Average Rosenbluth weight:    8.629424e+19 +/-  2.114226e+20 [-]
+    Average Rosenbluth weight:    8.111568e-01 +/-  2.677103e-04 [-]
+
+
+    Henry coefficient based on Rosenbluth weight:
+    ---------------------------------------------------------------------------
+        Block[  0]  5.480800e-07
+        Block[  1]  5.480859e-07
+        Block[  2]  5.484016e-07
+        Block[  3]  5.480585e-07
+        Block[  4]  5.480819e-07
+    ---------------------------------------------------------------------------
+    Average Henry coefficient:    5.481416e-07 +/-  1.809060e-10 [mol/kg/Pa]
+    Average Henry coefficient:    3.375782e-06 +/-  1.114127e-09 [molec./uc/Pa]
 
 
     Widom insertion chemical potential  statistics:
     ---------------------------------------------------------------------------
-        Block[  0] -14223.823196549638
-        Block[  1] -13478.32505950151
-        Block[  2] -10097.768677466604
-        Block[  3] -13090.8654618755
-        Block[  4] -11397.101650631806
+        Block[  0] 62.82192506044662
+        Block[  1] 62.818702117878374
+        Block[  2] 62.64597102263258
+        Block[  3] 62.83367492377858
+        Block[  4] 62.82088728391376
     ---------------------------------------------------------------------------
-    Excess chemical potential:          -1.377130e+04 +/-  2.768026e+03 [K]
+    Excess chemical potential:           6.278822e+01 +/-  9.899323e-02 [K]
     Tail-correction chemical potential:  0.000000e+00 +/-  0.000000e+00 [K]
-    Ideal chemical potential:           -inf +/- -nan [K]
-    Total chemical potential:           -inf +/- -nan [K]
+    Ideal chemical potential:           -inf +/-  nan [K]
+    Total chemical potential:           -inf +/-  nan [K]
     Imposed chemical potential:  -inf [K]
     ---------------------------------------------------------------------------
-    Excess chemical potential:   -1.145010e+02 +/-  2.301465e+01 [kJ/mol]
+    Excess chemical potential:    5.220505e-01 +/-  8.230758e-04 [kJ/mol]
     Tail-correction chemical potential:  0.000000e+00 +/-  0.000000e+00 [K]
-    Ideal chemical potential:    -inf +/- -nan [kJ/mol]
-    Total chemical potential:    -inf +/- -nan [kJ/mol]
+    Ideal chemical potential:    -inf +/-  nan [kJ/mol]
+    Total chemical potential:    -inf +/-  nan [kJ/mol]
     Imposed chemical potential:  -inf [kJ/mol]
     ---------------------------------------------------------------------------
     Imposed fugacity:             0.000000e+00 [Pa]
@@ -820,16 +890,16 @@ Production run CPU timings of the MC moves
 
 Component 0 helium
 
-Widom                               202.275223 [s]
-    Ewald                             0.097444 [s]
-    NonEwald                        197.660009 [s]
-    Tail                              3.335460 [s]
-    Overhead                          1.182310 [s]
+Widom                                39.603494 [s]
+    Ewald                             0.019650 [s]
+    NonEwald                         38.888043 [s]
+    Tail                              0.551785 [s]
+    Overhead                          0.144016 [s]
 
 
 
-Property sampling                     1.778606 [s]
-Energy/pressure sampling:             0.902279 [s]
+Property sampling                     0.460419 [s]
+Energy/pressure sampling:             0.292855 [s]
 Pressure sampling: (fw)               0.000000 [s]
 Pressure sampling: (im)               0.000000 [s]
 Pressure sampling: (ew)               0.000000 [s]
@@ -841,24 +911,24 @@ Production run CPU timings of the MC moves summed over systems and components
 ===============================================================================
 
 
-Widom                               202.275223 [s]
-    Ewald                             0.097444 [s]
-    NonEwald                        197.660009 [s]
-    Tail                              3.335460 [s]
-    Overhead                          1.182310 [s]
+Widom                                39.603494 [s]
+    Ewald                             0.019650 [s]
+    NonEwald                         38.888043 [s]
+    Tail                              0.551785 [s]
+    Overhead                          0.144016 [s]
 
-Property sampling:                    1.778606 [s]
-Energy/pressure sampling:             0.902279 [s]
+Property sampling:                    0.460419 [s]
+Energy/pressure sampling:             0.292855 [s]
 
-Production simulation time:         206.631928 [s]
-                All summed:         204.956108 [s]
-                  Overhead:           1.675820 [s]
+Production simulation time:          40.565487 [s]
+                All summed:          40.356768 [s]
+                  Overhead:           0.208719 [s]
 
 
-Initalization simulation time:        0.226172 [s]
-Equilibration simulation time:        0.582045 [s]
-Production simulation time:         206.631928 [s]
-Total simulation time:              207.440144 [s]
+Initalization simulation time:        0.030114 [s]
+Equilibration simulation time:        0.075592 [s]
+Production simulation time:          40.565487 [s]
+Total simulation time:               40.671193 [s]
 
 
 Energy averages and statistics:
@@ -982,6 +1052,15 @@ Inter-molecular energy contributions per energy type:
         -----------------------------------------------------------------------
         Average   0.000000e+00 +/-  0.000000e+00 [K]
 
+Polarization energy/kʙ
+-------------------------------------------------------------------------------
+    Block[  0]  0.000000e+00
+    Block[  1]  0.000000e+00
+    Block[  2]  0.000000e+00
+    Block[  3]  0.000000e+00
+    Block[  4]  0.000000e+00
+    ---------------------------------------------------------------------------
+    Average   0.000000e+00 +/-  0.000000e+00 [K]
 
 Total energy/kʙ
 -------------------------------------------------------------------------------
@@ -1010,6 +1089,7 @@ Component 0 (helium)
     Block[  4]  0.000000e+00
     ---------------------------------------------------------------------------
     Abs. loading average   0.000000e+00 +/-  0.000000e+00 [molecules/cell]
+    Abs. loading average   0.000000e+00 +/-  0.000000e+00 [molecules/uc]
     Abs. loading average   0.000000e+00 +/-  0.000000e+00 [mol/kg-framework]
     Abs. loading average   0.000000e+00 +/-  0.000000e+00 [mg/g-framework]
 
@@ -1020,6 +1100,7 @@ Component 0 (helium)
     Block[  4]  0.000000e+00
     ---------------------------------------------------------------------------
     Excess loading average   0.000000e+00 +/-  0.000000e+00 [molecules/cell]
+    Excess loading average   0.000000e+00 +/-  0.000000e+00 [molecules/uc]
     Excess loading average   0.000000e+00 +/-  0.000000e+00 [mol/kg-framework]
     Excess loading average   0.000000e+00 +/-  0.000000e+00 [mg/g-framework]
 

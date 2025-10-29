@@ -1,0 +1,384 @@
+Compiler and run-time data
+===============================================================================
+RASPA 3.0.8
+
+Random seed: 2937400155
+
+Compiled as a 64-bits application
+Compiler: gcc Clang 19.1.7
+Compile Date = Jul 28 2025, Compile Time = 20:19:58
+
+2025-10-27 19:47:04.444979
+Simulation started on Mon, Oct 27
+The start time was 19:47:00
+
+Cpu data:    arm64
+Cpu Model:   MacBookPro18,1
+Host name:  Anupoms-MacBook-Pro.locals
+OS release:  25.0.0
+OS type:     Darwin
+OS version:  25A362
+
+
+
+Mutual consistent basic set of units:
+===============================================================================
+
+Unit of temperature: 1 [K]
+Unit of length:      1e-10 [m]
+Unit of time:        1e-12 [s]
+Unit of mass:        1.6605402e-27 [kg]
+Unit of charge:      1.60217733e-19 [C/particle]
+
+
+Boltzmann constant (internal units):          0.8314464919307584 [-]
+represents conversion from energy (internal units) to temperature (in Kelvin)
+
+Derived units and their conversion factors:
+===============================================================================
+
+Unit of energy:                           1.6605402000000002e-23 [J]
+Unit of energy:                           10.000008872307538 [J.mol⁻¹]
+Unit of velocity:                         100 [m.s⁻¹]
+Unit of force:                            1.6605402000000002e-13 [N]
+Unit of diffusion:                        1.0000000000000002e-08 [m².s⁻¹]
+Unit of acceleration:                     1.0000000000000002e-08 [m².s⁻¹]
+Unit of torque:                           1.6605402000000002e-23 [N.m]
+Unit of pressure:                         16605402 [Pa]
+Unit of volume:                           1e-30 [m³]
+Unit of density:                          1660.5402 [kg.m⁻³]
+Unit of dynamic viscosity:                1.6605401999999997e-05 [N.s.m⁻²]
+Unit of enthalpy:                         1.6605402000000002e-23 [J]
+Unit of polarizability:                   1.5458657349975198e-35 [-]
+Unit of Coulomb potential:                167101.08000665612 [K]
+Unit of dielectric constant:              1.5458657349975193e-05 [s².C².kg⁻¹.m⁻³]
+Unit of dipole moment:                    1.60217733e-29 [C.m]
+Unit of Debye:                            4.803206799099162 [C.m]
+Unit of electric potential:               0.00010364272224473431 [V]
+Unit of electric field:                   1036427.222447343 [V.m⁻¹]
+Unit of isothermal compressibility:       6.02213665167516e-08 [Pa⁻¹]
+Unit of heat capacity:                    10.000008872307538 [J.mol⁻¹.K⁻¹]
+Unit of volumetric expansion coefficient: 1 [K⁻¹]
+
+
+Internal conversion factors:
+===============================================================================
+
+Energy (internal units) to Kelvin:      1.202724284692786 [-]
+Kelvin to energy (internal units):      0.8314457542157567 [-]
+
+
+System definitions
+===============================================================================
+
+Temperature:          300 [K]
+Beta:                 0.004009077391850886 [-]
+Pressure:             0 [Pa]
+Helium void fraction: 0.815 [-]
+
+Box:      25.83200   0.00000   0.00000
+           0.00000  25.83200   0.00000
+           0.00000   0.00000  25.83200
+Lengths:  25.83200  25.83200  25.83200
+Angles:   90.00000  90.00000  90.00000
+Rectangular boundary conditions
+Perpendicular widths:   25.83200  25.83200  25.83200
+
+
+
+
+Property measurement settings
+===============================================================================
+
+
+
+
+Pseudo-atoms
+===============================================================================
+
+  0 - Zn1      framework-atom: true
+  1 - O1       framework-atom: true
+  2 - O2       framework-atom: true
+  3 - C1       framework-atom: true
+  4 - C2       framework-atom: true
+  5 - C3       framework-atom: true
+  6 - H1       framework-atom: true
+
+  0 - Zn1      mass: 65.37000, charge:  0.00000
+  1 - O1       mass: 15.99940, charge:  0.00000
+  2 - O2       mass: 15.99940, charge:  0.00000
+  3 - C1       mass: 12.01070, charge:  0.00000
+  4 - C2       mass: 12.01070, charge:  0.00000
+  5 - C3       mass: 12.01070, charge:  0.00000
+  6 - H1       mass:  1.00794, charge:  0.00000
+
+  0 - Zn1      polarizability:  0.00000
+  1 - O1       polarizability:  0.00000
+  2 - O2       polarizability:  0.00000
+  3 - C1       polarizability:  0.00000
+  4 - C2       polarizability:  0.00000
+  5 - C3       polarizability:  0.00000
+  6 - H1       polarizability:  0.00000
+
+
+Force field status
+===============================================================================
+
+Cutoff Framework-Molecule VDW:  12.00000 [Å]
+Cutoff Molecule-Molecule VDW:   12.00000 [Å]
+Cutoff Coulomb:                 auto
+Overlap-criteria VDW:           1.000000e+05 [K]
+
+Zn1      - Zn1      Lennard-Jones p₀/kʙ:   0.42000 [K], p₁:  2.70000 [Å]
+                                  shift:  -0.00022 [K], tailcorrections: false
+Zn1      - O1       Lennard-Jones p₀/kʙ:  17.14643 [K], p₁:  2.84000 [Å]
+                                  shift:  -0.01205 [K], tailcorrections: false
+Zn1      - O2       Lennard-Jones p₀/kʙ:   5.44151 [K], p₁:  2.90500 [Å]
+                                  shift:  -0.00438 [K], tailcorrections: false
+Zn1      - C1       Lennard-Jones p₀/kʙ:   4.44297 [K], p₁:  3.22000 [Å]
+                                  shift:  -0.00663 [K], tailcorrections: false
+Zn1      - C2       Lennard-Jones p₀/kʙ:   4.48344 [K], p₁:  3.08500 [Å]
+                                  shift:  -0.00518 [K], tailcorrections: false
+Zn1      - C3       Lennard-Jones p₀/kʙ:   4.48344 [K], p₁:  3.08500 [Å]
+                                  shift:  -0.00518 [K], tailcorrections: false
+Zn1      - H1       Lennard-Jones p₀/kʙ:   2.13963 [K], p₁:  2.67000 [Å]
+                                  shift:  -0.00104 [K], tailcorrections: false
+O1       - O1       Lennard-Jones p₀/kʙ: 700.00000 [K], p₁:  2.98000 [Å]
+                                  shift:  -0.65655 [K], tailcorrections: false
+O1       - O2       Lennard-Jones p₀/kʙ: 222.14860 [K], p₁:  3.04500 [Å]
+                                  shift:  -0.23715 [K], tailcorrections: false
+O1       - C1       Lennard-Jones p₀/kʙ: 181.38357 [K], p₁:  3.36000 [Å]
+                                  shift:  -0.34946 [K], tailcorrections: false
+O1       - C2       Lennard-Jones p₀/kʙ: 183.03552 [K], p₁:  3.22500 [Å]
+                                  shift:  -0.27575 [K], tailcorrections: false
+O1       - C3       Lennard-Jones p₀/kʙ: 183.03552 [K], p₁:  3.22500 [Å]
+                                  shift:  -0.27575 [K], tailcorrections: false
+O1       - H1       Lennard-Jones p₀/kʙ:  87.34987 [K], p₁:  2.81000 [Å]
+                                  shift:  -0.05760 [K], tailcorrections: false
+O2       - O2       Lennard-Jones p₀/kʙ:  70.50000 [K], p₁:  3.11000 [Å]
+                                  shift:  -0.08543 [K], tailcorrections: false
+O2       - C1       Lennard-Jones p₀/kʙ:  57.56301 [K], p₁:  3.42500 [Å]
+                                  shift:  -0.12441 [K], tailcorrections: false
+O2       - C2       Lennard-Jones p₀/kʙ:  58.08726 [K], p₁:  3.29000 [Å]
+                                  shift:  -0.09864 [K], tailcorrections: false
+O2       - C3       Lennard-Jones p₀/kʙ:  58.08726 [K], p₁:  3.29000 [Å]
+                                  shift:  -0.09864 [K], tailcorrections: false
+O2       - H1       Lennard-Jones p₀/kʙ:  27.72093 [K], p₁:  2.87500 [Å]
+                                  shift:  -0.02097 [K], tailcorrections: false
+C1       - C1       Lennard-Jones p₀/kʙ:  47.00000 [K], p₁:  3.74000 [Å]
+                                  shift:  -0.17215 [K], tailcorrections: false
+C1       - C2       Lennard-Jones p₀/kʙ:  47.42805 [K], p₁:  3.60500 [Å]
+                                  shift:  -0.13935 [K], tailcorrections: false
+C1       - C3       Lennard-Jones p₀/kʙ:  47.42805 [K], p₁:  3.60500 [Å]
+                                  shift:  -0.13935 [K], tailcorrections: false
+C1       - H1       Lennard-Jones p₀/kʙ:  22.63405 [K], p₁:  3.19000 [Å]
+                                  shift:  -0.03194 [K], tailcorrections: false
+C2       - C2       Lennard-Jones p₀/kʙ:  47.86000 [K], p₁:  3.47000 [Å]
+                                  shift:  -0.11186 [K], tailcorrections: false
+C2       - C3       Lennard-Jones p₀/kʙ:  47.86000 [K], p₁:  3.47000 [Å]
+                                  shift:  -0.11186 [K], tailcorrections: false
+C2       - H1       Lennard-Jones p₀/kʙ:  22.84018 [K], p₁:  3.05500 [Å]
+                                  shift:  -0.02487 [K], tailcorrections: false
+C3       - C3       Lennard-Jones p₀/kʙ:  47.86000 [K], p₁:  3.47000 [Å]
+                                  shift:  -0.11186 [K], tailcorrections: false
+C3       - H1       Lennard-Jones p₀/kʙ:  22.84018 [K], p₁:  3.05500 [Å]
+                                  shift:  -0.02487 [K], tailcorrections: false
+H1       - H1       Lennard-Jones p₀/kʙ:  10.90000 [K], p₁:  2.64000 [Å]
+                                  shift:  -0.00494 [K], tailcorrections: false
+
+Ewald precision: 1e-06
+Ewald alpha: 0.24540328220483407
+Ewald k-vectors: 7 7 7
+
+
+Component definitions
+===============================================================================
+
+Framework 0 [IRMOF-1]
+
+    Box:      25.83200   0.00000   0.00000
+               0.00000  25.83200   0.00000
+               0.00000   0.00000  25.83200
+    Lengths:  25.83200  25.83200  25.83200
+    Angles:   90.00000  90.00000  90.00000
+    Perpendicular widths:   25.83200  25.83200  25.83200
+
+    number Of Atoms:                   424 [-]
+    mass:                       6158.59424 [amu]
+      0: Zn1    position  0.29340  0.20660  0.20660, charge  1.21151
+      1: O1     position  0.25000  0.25000  0.25000, charge -0.96731
+      2: O2     position  0.28190  0.21810  0.13400, charge -0.48205
+      3: C1     position  0.25000  0.25000  0.11130, charge  0.32116
+      4: C2     position  0.25000  0.25000  0.05380, charge -0.06436
+      5: C3     position  0.28290  0.21710  0.02690, charge -0.02336
+      6: H1     position  0.30490  0.19510  0.04480, charge  0.05378
+    use charge from: charge-equilibration method
+    net charge:                      0.00000 [e]
+    smallest charge:                -0.96731 [e]
+    largest charge:                  1.21151 [e]
+    number of bonds: 0
+
+
+
+
+
+Number of pseudo-atoms
+===============================================================================
+
+Total number of pseudo-atoms:
+-------------------------------------------------------------------------------
+    index   0 (Zn1): 0 atoms
+    index   1 (O1): 0 atoms
+    index   2 (O2): 0 atoms
+    index   3 (C1): 0 atoms
+    index   4 (C2): 0 atoms
+    index   5 (C3): 0 atoms
+    index   6 (H1): 0 atoms
+
+
+
+
+Energy status Recomputed from scratch
+===============================================================================
+
+Total potential energy/kʙ       -2.004087e-13 [K]
+    external field VDW/kʙ        0.000000e+00 [K]
+    external field Real/kʙ       0.000000e+00 [K]
+    framework-molecule VDW/kʙ    0.000000e+00 [K]
+    framework-molecule Real/kʙ   0.000000e+00 [K]
+    molecule-molecule VDW/kʙ     0.000000e+00 [K]
+    molecule-molecule Real/kʙ    0.000000e+00 [K]
+    Van der Waals (Tail)/kʙ      0.000000e+00 [K]
+    Ewald Fourier/kʙ            -2.004087e-13 [K]
+    Ewald self/kʙ                0.000000e+00 [K]
+    Ewald exclusion/kʙ           0.000000e+00 [K]
+    intra VDW/kʙ                 0.000000e+00 [K]
+    intra Coulombic/kʙ           0.000000e+00 [K]
+    polarization/kʙ              0.000000e+00 [K]
+    dU/dlambda VDW/kʙ            0.000000e+00 [K]
+    dU/dlambda Real/kʙ           0.000000e+00 [K]
+    dU/dlambda Ewald/kʙ          0.000000e+00 [K]
+
+
+
+
+
+
+Energy statistics             |  Energy [K]   | Recomputed [K]|  Drift [K]    |
+===============================================================================
+Total potential energy/kʙ     | -2.004087e-13 | -2.004087e-13 |  0.000000e+00 |
+    external field VDW/kʙ     |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    external field Real/kʙ    |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    framework-molecule VDW/kʙ |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    framework-molecule Real/kʙ|  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    molecule-molecule VDW/kʙ  |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    molecule-molecule Real/kʙ |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    Van der Waals (Tail)/kʙ   |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    Ewald Fourier/kʙ          | -2.004087e-13 | -2.004087e-13 |  0.000000e+00 |
+    Ewald self/kʙ             |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    Ewald exclusion/kʙ        |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    intra VDW/kʙ              |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    intra Coulombic/kʙ        |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    polarization/kʙ           |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    dU/dlambda VDW/kʙ         |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    dU/dlambda Real/kʙ        |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+    dU/dlambda Ewald/kʙ       |  0.000000e+00 |  0.000000e+00 |  0.000000e+00 |
+-------------------------------------------------------------------------------
+
+
+Monte-Carlo moves statistics
+===============================================================================
+
+
+
+Production run counting of the MC moves summed over systems and components
+===============================================================================
+
+
+Production count MC-steps:                0 [-]
+               All summed:                0 [-]
+               difference:                0 [-]
+
+
+Production run CPU timings of the MC moves
+===============================================================================
+
+
+Property sampling                     0.000000 [s]
+Energy/pressure sampling:             0.000000 [s]
+Pressure sampling: (fw)               0.000000 [s]
+Pressure sampling: (im)               0.000000 [s]
+Pressure sampling: (ew)               0.000000 [s]
+Pressure sampling: (tc)               0.000000 [s]
+Pressure sampling: (..)               0.000000 [s]
+
+
+Production run CPU timings of the MC moves summed over systems and components
+===============================================================================
+
+
+Property sampling:                    0.000000 [s]
+Energy/pressure sampling:             0.000000 [s]
+
+Production simulation time:           0.000000 [s]
+                All summed:           0.000000 [s]
+                  Overhead:           0.000000 [s]
+
+
+Initalization simulation time:        0.000000 [s]
+Equilibration simulation time:        0.000000 [s]
+Production simulation time:           0.000000 [s]
+Total simulation time:                0.000000 [s]
+
+
+Energy averages and statistics:
+===============================================================================
+
+Framework-molecule energy:
+-------------------------------------------------------------------------------
+
+
+
+Framework-molecule energy contributions per energy type:
+-------------------------------------------------------------------------------
+
+
+
+Inter-molecular energy:
+-------------------------------------------------------------------------------
+
+
+
+Inter-molecular energy contributions per energy type:
+-------------------------------------------------------------------------------
+
+Polarization energy/kʙ
+-------------------------------------------------------------------------------
+    Block[  0]  nan
+    Block[  1]  nan
+    Block[  2]  nan
+    Block[  3]  nan
+    Block[  4]  nan
+    ---------------------------------------------------------------------------
+    Average   nan +/-  0.000000e+00 [K]
+
+Total energy/kʙ
+-------------------------------------------------------------------------------
+    Block[  0]  nan
+    Block[  1]  nan
+    Block[  2]  nan
+    Block[  3]  nan
+    Block[  4]  nan
+    ---------------------------------------------------------------------------
+    Average   nan +/-  0.000000e+00 [K]
+
+Enthalpy of adsorption
+===============================================================================
+
+No fluctuating components present.
+
+
+Loadings
+===============================================================================
+
+

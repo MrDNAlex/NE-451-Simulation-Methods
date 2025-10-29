@@ -54,7 +54,7 @@
         },
         "forceField": {
             "Ewald": {
-                "alpha": 0.26505830360350674,
+                "alpha": 0.24540328220483407,
                 "kVectors": [
                     7,
                     7,
@@ -65,7 +65,7 @@
             "interactions": [
                 {
                     "potential": "Lennard-Jones",
-                    "shift [K]": -0.00021794556634776072,
+                    "shift [K]": -0.00021794556634776075,
                     "tailCorrections": false,
                     "typeA": "Zn1",
                     "typeB": "Zn1",
@@ -200,7 +200,7 @@
                 },
                 {
                     "potential": "Lennard-Jones",
-                    "shift [K]": -0.08542644727666675,
+                    "shift [K]": -0.08542644727666673,
                     "tailCorrections": false,
                     "typeA": "O2",
                     "typeB": "O2",
@@ -432,16 +432,17 @@
             ]
         },
         "hardwareInfo": {
-            "compile_date": "May 21 2025",
-            "compile_time": "00:58:16",
-            "compiler": "gcc Clang 20.1.5 (https://github.com/conda-forge/clangdev-feedstock ed2721dc1050089017cf02556fe1359353c3b823)",
-            "hostname": "n021",
-            "os_arch": "x86_64",
-            "os_release": "6.8.0-83-generic",
-            "os_type": "Linux",
-            "os_version": "#83-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  5 21:46:54 UTC 2025",
+            "compile_date": "Jul 28 2025",
+            "compile_time": "20:19:58",
+            "compiler": "gcc Clang 19.1.7",
+            "cpu_model": "MacBookPro18,1",
+            "hostname": "Anupoms-MacBook-Pro.local",
+            "os_arch": "arm64",
+            "os_release": "25.0.0",
+            "os_type": "Darwin",
+            "os_version": "25A362",
             "start_date": "Mon, Oct 27",
-            "start_time": "14:34:00"
+            "start_time": "20:04:00"
         },
         "initialConditions": {
             "beta": 0.004009077391850886,
@@ -481,10 +482,10 @@
             "Coulomb potential [K]": 167101.08000665612,
             "Energy to Kelvin [-]": 1.202724284692786,
             "Kelvin to energy [-]": 0.8314457542157567,
-            "acceleration [m²/s]": 1e-08,
+            "acceleration [m²/s]": 1.0000000000000002e-08,
             "charge [C/particle]": 1.60217733e-19,
             "dielectric constant [s² C²/(kg m³)]": 1.5458657349975193e-05,
-            "diffusion [m²/s]": 1e-08,
+            "diffusion [m²/s]": 1.0000000000000002e-08,
             "dipole moment [C.m]": 1.60217733e-29,
             "electric field [V]": 1036427.222447343,
             "electric potential [V]": 0.00010364272224473431,
@@ -506,7 +507,7 @@
                     "Widom": {
                         "accepted": 0.0,
                         "all": 1000000,
-                        "constructed": 999823.0,
+                        "constructed": 1000000.0,
                         "fraction": 0.0,
                         "maxChange": 0.0,
                         "total": 1000000.0
@@ -516,38 +517,38 @@
             }
         },
         "cpuTimings": {
-            "equilibration": 0.5820446789999808,
+            "equilibration": 0.07559200000003868,
             "gridCreation": 0.0,
             "helium": {
                 "Widom": {
-                    "Ewald": 0.09744359300058271,
-                    "NonEwald": 197.66000936300136,
-                    "Overhead": 1.1823098080065066,
-                    "Tail": 3.335460163999572,
-                    "Total": 202.27522292800802
+                    "Ewald": 0.01964999999999902,
+                    "NonEwald": 38.88804300006579,
+                    "Overhead": 0.14401600003199544,
+                    "Tail": 0.5517849999950792,
+                    "Total": 39.603494000092866
                 }
             },
-            "initialization": 0.2261715920000346,
-            "production": 206.63192765799988,
+            "initialization": 0.03011399999999669,
+            "production": 40.565486999999685,
             "summedSystemsAndComponents": {
                 "Widom": {
-                    "Ewald": 0.09744359300058271,
-                    "NonEwald": 197.66000936300136,
-                    "Overhead": 1.1823098080065066,
-                    "Tail": 3.335460163999572,
-                    "Total": 202.27522292800802
+                    "Ewald": 0.01964999999999902,
+                    "NonEwald": 38.88804300006579,
+                    "Overhead": 0.14401600003199544,
+                    "Tail": 0.5517849999950792,
+                    "Total": 39.603494000092866
                 },
-                "allSummed": 204.956107842008,
-                "energyPressureSampling": 0.902279162999998,
-                "overhead": 1.675819815991872,
-                "productionSimulationTime": 206.63192765799988,
-                "propertySampling": 1.7786057509999975
+                "allSummed": 40.356768000092636,
+                "energyPressureSampling": 0.292855000000004,
+                "overhead": 0.2087189999070489,
+                "productionSimulationTime": 40.565486999999685,
+                "propertySampling": 0.4604189999997641
             },
             "system": {
-                "energyPressureSampling": 0.902279162999998,
-                "propertySampling": 1.7786057509999975
+                "energyPressureSampling": 0.292855000000004,
+                "propertySampling": 0.4604189999997641
             },
-            "total": 207.44014392899956
+            "total": 40.671192999999725
         },
         "drift": {
             "Ewald Fourier [K]": 0.0,
@@ -753,6 +754,6 @@
             }
         }
     },
-    "seed": 1168747689,
-    "version": "3.0.5"
+    "seed": 3755224816,
+    "version": "3.0.8"
 }
