@@ -25,14 +25,17 @@ jupyter_client==8.6.3
 jupyter_core==5.8.1
 jupyterlab_pygments==0.3.0
 kiwisolver==1.4.9
+llvmlite==0.45.1
 MarkupSafe==3.0.3
 matplotlib==3.10.6
 matplotlib-inline==0.1.7
 mistune==3.1.4
+narwhals==2.9.0
 nbclient==0.10.2
 nbconvert==7.16.6
 nbformat==5.10.4
 nest-asyncio==1.6.0
+numba==0.62.1
 numpy==2.3.3
 packaging==25.0
 pandas==2.3.2
@@ -42,6 +45,7 @@ pexpect==4.9.0
 pillow==11.3.0
 platformdirs==4.4.0
 playwright==1.55.0
+plotly==6.3.1
 prompt_toolkit==3.0.52
 psutil==7.1.0
 ptyprocess==0.7.0
