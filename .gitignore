@@ -1,3 +1,6 @@
 venv/
 /Labs/Lab1/Lab1/RDF/Dumpfiles
 *Dumpfiles
+/InClassLabs/MonteCarlo/Thin Film Growth/No
+/InClassLabs/MonteCarlo/Thin Film Growth/Yes
+*tmp
