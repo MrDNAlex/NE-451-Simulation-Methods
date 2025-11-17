@@ -28,4 +28,5 @@ for k in high_sym_k:
     plt.axvline(x=k, color='k', linestyle='--', lw=0.8)
 
 plt.tight_layout()
+plt.savefig("Test.png")
 plt.show()
