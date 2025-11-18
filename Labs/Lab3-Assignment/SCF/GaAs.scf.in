@@ -3,6 +3,7 @@ calculation = 'scf'
 prefix = 'GaAs'
 pseudo_dir = './'
 wf_collect = .true.
+verbosity = 'high'
 /
 &system
 ibrav = 2
