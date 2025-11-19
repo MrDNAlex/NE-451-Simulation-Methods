@@ -11,7 +11,7 @@ nat = 2
 ntyp = 2
 ecutwfc = 60
 ecutrho = 244
-nbnd =  #define appropriately
+nbnd =  16
 /
 &electrons
 mixing_mode = 'plain'
