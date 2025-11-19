@@ -1,5 +1,5 @@
 &bands
-   outdir = './',
+   outdir = './tmp/',
    prefix='GaAs',
    filband='GaAs.band',
    lsym=.true.
