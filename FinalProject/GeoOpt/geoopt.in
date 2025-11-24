@@ -1,5 +1,5 @@
 &control
-    calculation = 'scf'
+    calculation = 'relax'
     prefix      = 'LiFePO4'
     outdir      = './tmp/'
     pseudo_dir  = './'       ! adjust to wherever your UPFs are
@@ -8,7 +8,7 @@
 /
 &system
     ibrav        = 0
-    nat          = 112
+    nat          = 28
     ntyp         = 4
 
     ecutwfc      = 60.0
@@ -17,12 +17,16 @@
     occupations  = 'smearing'
     smearing     = 'mv'
     degauss      = 0.01
+
     nspin        = 2
-    starting_magnetization(2) = 0.7
+    starting_magnetization(2) = 0.7   ! Fe (2nd species: Li, Fe, P, O)
 /
 &electrons
     conv_thr     = 1.0d-8
     mixing_beta  = 0.7
+/
+&ions
+    ion_dynamics   = 'bfgs'
 /
 
 CELL_PARAMETERS angstrom

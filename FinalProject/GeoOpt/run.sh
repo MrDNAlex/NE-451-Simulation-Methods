@@ -8,4 +8,4 @@
 
 module load class-simulations
 
-mpirun -np $SLURM_NTASKS pw.x < test.scf.in > test.scf.out
+mpirun -np $SLURM_NTASKS pw.x < geoopt.in > geoopt.out

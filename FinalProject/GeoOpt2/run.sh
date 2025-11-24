@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=FP-test
+#SBATCH --job-name=FP-Geo2
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --time=12:00:00
@@ -8,4 +8,4 @@
 
 module load class-simulations
 
-mpirun -np $SLURM_NTASKS pw.x < test.scf.in > test.scf.out
+mpirun -np $SLURM_NTASKS pw.x < geoopt.in > geoopt.out
