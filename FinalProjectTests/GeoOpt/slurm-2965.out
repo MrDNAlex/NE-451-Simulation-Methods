@@ -1,0 +1,2 @@
+DONE: sourced file /scic/app/cpu/gaussian/16c-legacy/g16/bsd/g16.profile
+slurmstepd-n004: error: *** JOB 2965 ON n004 CANCELLED AT 2025-11-23T04:27:11 DUE TO TIME LIMIT ***
