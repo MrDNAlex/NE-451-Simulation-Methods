@@ -1,0 +1,3 @@
+[submodule "FinalProject"]
+	path = FinalProject
+	url = git@github.com:MrDNAlex/NE-451-Final-Project.git
